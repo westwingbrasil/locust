@@ -40,6 +40,8 @@ class LocustRunner(object):
         self.hatching_greenlet = None
         self.exceptions = {}
         self.stats = global_stats
+        if options.run_time is not None:
+            self.stats.run_time = options.run_time
         
         # register listener that resets stats when hatching is complete
         def on_hatch_complete(user_count):
